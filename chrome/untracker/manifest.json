@@ -1,0 +1,26 @@
+{
+  "manifest_version": 2,
+  "name": "Google Click Untracker",
+  "description": "Don't let Google track your clicks!",
+  "version": "0.1",
+  "content_scripts": [
+    {
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "include_globs": [
+        "*://*.google.com/*",
+        "*://*.google.com.??/*",
+        "*://*.google.??/*",
+        "*://*.google.co.??/*"
+      ],
+      "js": [
+        "jquery-1.6.3.min.js",
+        "untracker.js"
+      ],
+      "run_at": "document_idle",
+      "all_frames": false
+    }
+  ]
+}
